@@ -21,6 +21,7 @@
 				class="toggle"
 				data-toggle-theme="dark,light"
 				data-act-class="ACTIVECLASS"
+				bind:
 			/>
 		</label>
 	</div>
