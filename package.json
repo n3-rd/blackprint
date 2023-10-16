@@ -33,6 +33,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"clipboardy": "^3.0.0"
+		"clipboardy": "^3.0.0",
+		"theme-change": "^2.5.0"
 	}
 }
