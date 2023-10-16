@@ -15,11 +15,10 @@
 	</div>
 	<div class="flex-none">
 		<label class="label cursor-pointer flex gap-3">
-			<span class="label-text">Dark Mode</span>
+			<span class="label-text">Change Theme</span>
 			<input
 				type="checkbox"
 				class="toggle"
-				checked
 				data-toggle-theme="dark,light"
 				data-act-class="ACTIVECLASS"
 			/>
