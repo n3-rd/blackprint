@@ -21,7 +21,7 @@
 <div class="menu bg-base-200 w-[25%] rounded-box h-screen">
 	<div class="overflow-y-scroll relative w-full">
 		<ul class="menu-list">
-			<li class="menu-title">Title</li>
+			<li class="menu-title">History</li>
 			{#each entries as entry}
 				<HistoryEntry entryText={entry} />
 			{/each}

@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "blackprint",
-    "version": "0.1.0"
+    "version": "0.1.2"
   },
   "tauri": {
     "allowlist": {
@@ -16,8 +16,8 @@
     },
     "bundle": {
       "active": true,
-      "category": "DeveloperTool",
-      "copyright": "",
+      "category": "Utility",
+      "copyright": "n3-rd",
       "deb": {
         "depends": []
       },
@@ -29,8 +29,8 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
-      "longDescription": "",
+      "identifier": "com.n3rd.blackprint",
+      "longDescription": "A simple qrcode generator",
       "macOS": {
         "entitlements": null,
         "exceptionDomain": "",
@@ -39,7 +39,7 @@
         "signingIdentity": null
       },
       "resources": [],
-      "shortDescription": "",
+      "shortDescription": "qrcode generator",
       "targets": "all",
       "windows": {
         "certificateThumbprint": null,
@@ -57,9 +57,12 @@
       {
         "fullscreen": false,
         "height": 600,
+        "minHeight": 600,
         "resizable": true,
         "title": "Blackprint",
-        "width": 800
+        "width": 800,
+        "minWidth": 800,
+        "center": true
       }
     ]
   }
