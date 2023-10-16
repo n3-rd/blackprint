@@ -42,3 +42,11 @@ npm run tauri build
 ## Contributing
 
 Contributions are always welcome!
+
+## Todo
+
+- Add colour customisation for qrcode
+- Add option to save as image
+- Add support for Windows
+- Add support for MacOS
+- Release V1
