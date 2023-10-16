@@ -1,7 +1,8 @@
 <script>
-	import { modalOpen } from './stores';
+	import { modalOpen, qrcodeName, qrcodeText } from './stores';
 	import clipboard from 'clipboardy';
 	import UrlInfo from './sub-components/UrlInfo.svelte';
+	import { addLink } from './main';
 
 	let link = '';
 
@@ -21,6 +22,15 @@
 			'i'
 		); // validate fragment locator
 		return !!urlPattern.test(urlString);
+	};
+
+	const pushLink = () => {
+		addLink(link);
+		qrcodeText.set(link);
+		qrcodeName.set(`${link.slice(0, 20)}...`);
+
+		link = '';
+		modalOpen.set(false);
 	};
 </script>
 
@@ -57,7 +67,7 @@
 				<form method="dialog" class="flex gap-3">
 					<!-- if there is a button in form, it will close the modal -->
 					<button class="btn" on:click={() => modalOpen.set(false)}>Close</button>
-					<button class="btn btn-primary">Get QRcode</button>
+					<button class="btn btn-primary" on:click={() => pushLink()}>Get QRcode</button>
 				</form>
 			</div>
 			{#if !isValidUrl(link)}
