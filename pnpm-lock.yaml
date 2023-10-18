@@ -8,6 +8,9 @@ dependencies:
   clipboardy:
     specifier: ^3.0.0
     version: 3.0.0
+  svelte-awesome-color-picker:
+    specifier: ^2.4.7
+    version: 2.4.7
   theme-change:
     specifier: ^2.5.0
     version: 2.5.0
@@ -797,7 +800,6 @@ packages:
 
   /colord@2.9.3:
     resolution: {integrity: sha512-jeC1axXpnb0/2nn/Y1LPuLdgXBLH7aDcHu4KEKfqw3CUhX7ZpfBSlPKyqXE6btIgEzfWtrX3/tyBCaCvXvMkOw==}
-    dev: true
 
   /commander@4.1.1:
     resolution: {integrity: sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==}
@@ -1975,6 +1977,12 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
     dev: true
+
+  /svelte-awesome-color-picker@2.4.7:
+    resolution: {integrity: sha512-LW9n16pR3V9vxFXdq0rmtBYJXv57zBZmLV/KNPtFqTo0kYwu7NsQhZZxFv6qoB/5PUXyPMfe3VCllyauFEY3SQ==}
+    dependencies:
+      colord: 2.9.3
+    dev: false
 
   /svelte-check@3.5.2(postcss-load-config@4.0.1)(postcss@8.4.31)(svelte@4.2.1):
     resolution: {integrity: sha512-5a/YWbiH4c+AqAUP+0VneiV5bP8YOk9JL3jwvN+k2PEPLgpu85bjQc5eE67+eIZBBwUEJzmO3I92OqKcqbp3fw==}
