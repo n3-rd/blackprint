@@ -54,6 +54,11 @@
 	 */
 	let canvas;
 
+	/**
+	 * @type {boolean}
+	 */
+	let toast = false;
+
 	$: {
 		if (qrcode) {
 			qrcode.clear();
@@ -101,9 +106,25 @@
 		// @ts-ignore
 		link.href = canvas.toDataURL('image/png');
 		link.click();
+		toggleToast();
 	}
+
+	let toggleToast = () => {
+		toast = true;
+		setTimeout(() => {
+			toast = false;
+		}, 3000);
+	};
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div id="qrcode" class="w-full h-full flex justify-center items-center" on:click={saveAsImage} />
+
+{#if toast}
+	<div class="toast toast-top">
+		<div class="alert alert-success">
+			<span>Image saved in downloads folder!</span>
+		</div>
+	</div>
+{/if}
