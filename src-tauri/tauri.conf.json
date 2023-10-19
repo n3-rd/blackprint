@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "blackprint",
-    "version": "0.1.2"
+    "version": "1"
   },
   "tauri": {
     "allowlist": {
@@ -30,7 +30,7 @@
         "icons/icon.ico"
       ],
       "identifier": "com.n3rd.blackprint",
-      "longDescription": "A simple qrcode generator",
+      "longDescription": "Generate QRCodes with ease",
       "macOS": {
         "entitlements": null,
         "exceptionDomain": "",
@@ -39,7 +39,7 @@
         "signingIdentity": null
       },
       "resources": [],
-      "shortDescription": "qrcode generator",
+      "shortDescription": "Generate QRCodes with ease",
       "targets": "all",
       "windows": {
         "certificateThumbprint": null,
