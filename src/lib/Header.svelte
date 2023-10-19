@@ -3,6 +3,7 @@
 	import { themeChange } from 'theme-change';
 	import Adjust from './sub-components/Adjust.svelte';
 	import ColorModal from './ColorModal.svelte';
+	import GithubIcon from './sub-components/GithubIcon.svelte';
 
 	// NOTE: the element that is using one of the theme attributes must be in the DOM on mount
 	onMount(() => {
@@ -16,6 +17,9 @@
 		<div class="normal-case text-xl font-bold px-4">BLACKprINT</div>
 	</div>
 	<div class="flex-none gap-3">
+		<a href="http://github.com/n3-rd/blueprint" target="_blank">
+			<GithubIcon color="#a6adba" />
+		</a>
 		<div class="dropdown dropdown-hover">
 			<button tabindex="0" class="btn m-1">
 				<Adjust color="#a6adba" />
