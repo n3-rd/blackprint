@@ -1,6 +1,6 @@
 <script>
 	import { onMount, onDestroy } from 'svelte';
-	import { backgroundColor, foregroundColor } from './stores';
+	import { backgroundColor, foregroundColor, qrcodeName } from './stores';
 
 	/**
 	 * value of the code example: google.com
@@ -49,6 +49,11 @@
 	 */
 	let qrcode;
 
+	/**
+	 * @type {Element | null}
+	 */
+	let canvas;
+
 	$: {
 		if (qrcode) {
 			qrcode.clear();
@@ -79,6 +84,7 @@
 				// @ts-ignore
 				correctLevel: QRCode.CorrectLevel.H
 			});
+			canvas = document.querySelector('#qrcode canvas');
 		};
 	});
 
@@ -87,6 +93,17 @@
 			qrcode.clear();
 		}
 	});
+
+	export function saveAsImage() {
+		let link = document.createElement('a');
+		let linkName = `${$qrcodeName + Math.floor(Math.random() * 1000)}`;
+		link.download = linkName;
+		// @ts-ignore
+		link.href = canvas.toDataURL('image/png');
+		link.click();
+	}
 </script>
 
-<div id="qrcode" class="w-full h-full flex justify-center items-center" />
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<div id="qrcode" class="w-full h-full flex justify-center items-center" on:click={saveAsImage} />

@@ -3,7 +3,6 @@
 	import { qrcodeText, qrcodeName, foregroundColor, backgroundColor } from './stores';
 	import OpenLinkButton from './sub-components/OpenLinkButton.svelte';
 	import CopyLinkButton from './sub-components/CopyLinkButton.svelte';
-	import { setQrCode } from './main';
 
 	/**
 	 * @type {string}
