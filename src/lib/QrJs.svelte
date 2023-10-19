@@ -1,5 +1,6 @@
 <script>
 	import { onMount, onDestroy } from 'svelte';
+	import { backgroundColor, foregroundColor } from './stores';
 
 	/**
 	 * value of the code example: google.com
@@ -14,12 +15,37 @@
 	 */
 	export let squareSize;
 
-	export let foregroundColor = '#000000';
-
-	export let backgroundColor = '#ffffff';
+	/**
+	 * @type {string}
+	 */
+	export let foregroundValue;
 
 	/**
-	 * @type {{ clear: () => void; makeCode: (arg0: string) => void; }}
+	 * @type {string}
+	 */
+	export let backgroundValue;
+
+	/**
+	 * @typedef {Object} QRCodeOptions
+	 * @property {string} text
+	 * @property {number} width
+	 * @property {number} height
+	 * @property {string} colorDark
+	 * @property {string} colorLight
+	 * @property {number} correctLevel
+	 * @property {boolean} [useSVG]
+	 */
+
+	/**
+	 * @typedef {Object} QRCodeInstance
+	 * @property {() => void} clear
+	 * @property {(text: string) => void} makeCode
+	 * @property {QRCodeOptions} _htOption
+	 * @property {() => void} [redraw]
+	 */
+
+	/**
+	 * @type {QRCodeInstance}
 	 */
 	let qrcode;
 
@@ -27,7 +53,14 @@
 		if (qrcode) {
 			qrcode.clear();
 			qrcode.makeCode(codeValue);
+			qrcode._htOption.colorDark = foregroundValue;
+			qrcode._htOption.colorLight = backgroundValue;
+			if (qrcode.redraw) {
+				qrcode.redraw();
+			}
 		}
+		foregroundValue = $foregroundColor;
+		backgroundValue = $backgroundColor;
 	}
 
 	onMount(() => {
@@ -41,8 +74,8 @@
 				text: codeValue,
 				width: squareSize,
 				height: squareSize,
-				colorDark: foregroundColor,
-				colorLight: backgroundColor,
+				colorDark: foregroundValue,
+				colorLight: backgroundValue,
 				// @ts-ignore
 				correctLevel: QRCode.CorrectLevel.H
 			});

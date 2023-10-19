@@ -1,29 +1,41 @@
 <script>
 	import QrJs from './QrJs.svelte';
-	import { qrcodeText, qrcodeName } from './stores';
-	import clipboard from 'clipboardy';
+	import { qrcodeText, qrcodeName, foregroundColor, backgroundColor } from './stores';
 	import OpenLinkButton from './sub-components/OpenLinkButton.svelte';
 	import CopyLinkButton from './sub-components/CopyLinkButton.svelte';
+	import { setQrCode } from './main';
 
 	/**
 	 * @type {string}
 	 */
 	let qrText;
 	$: qrText = $qrcodeText;
+	/**
+	 * @type {string}
+	 */
+	let foreground;
+	/**
+	 * @type {string}
+	 */
+	let background;
 
-	const copyLink = async () => {
-		await clipboard.write(qrText);
-	};
+	$: {
+		foreground = $foregroundColor;
+		background = $backgroundColor;
+	}
 </script>
 
 <div class="h-full w-full flex justify-center items-center">
 	<div class="card w-96 bg-base-100 shadow-xl">
-		<figure class="bg-white py-4 flex justify-center items-center">
+		<figure
+			class="py-4 flex justify-center items-center transition-colors duration-200"
+			style="background-color: {foreground};"
+		>
 			<QrJs
 				codeValue={qrText}
 				squareSize="250"
-				foregroundColor="#000000"
-				backgroundColor="#ffffff"
+				foregroundValue={foreground}
+				backgroundValue={background}
 			/>
 		</figure>
 		<div class="card-body">

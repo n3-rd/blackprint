@@ -1,3 +1,5 @@
+import { qrcodeName, qrcodeText } from '$lib/stores';
+
 /**
  * @param {string} link
  */
@@ -15,4 +17,12 @@ export function addLink(link) {
 	} else {
 		console.error('Local storage is not available');
 	}
+}
+
+/**
+ * @param {string} entry
+ */
+export function setQrCode(entry) {
+	qrcodeText.set(entry);
+	qrcodeName.set(`${entry.slice(0, 20)}...`);
 }

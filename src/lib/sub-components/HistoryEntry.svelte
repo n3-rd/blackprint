@@ -1,4 +1,5 @@
 <script>
+	import { setQrCode } from '$lib/main';
 	import { qrcodeName, qrcodeText } from '$lib/stores';
 
 	let history = localStorage.getItem('links');
@@ -11,14 +12,6 @@
 	setInterval(() => {
 		history = localStorage.getItem('links');
 	}, 1000);
-
-	/**
-	 * @param {string} entry
-	 */
-	function setQrCode(entry) {
-		qrcodeText.set(entry);
-		qrcodeName.set(`${entry.slice(0, 20)}...`);
-	}
 
 	/**
 	 * @param {string} entry

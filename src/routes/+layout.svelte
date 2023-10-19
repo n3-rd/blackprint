@@ -1,4 +1,5 @@
 <script>
+	import ColorModal from '$lib/ColorModal.svelte';
 	import Header from '$lib/Header.svelte';
 	import History from '$lib/History.svelte';
 	import Modal from '$lib/Modal.svelte';

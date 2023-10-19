@@ -1,9 +1,12 @@
 <script>
 	import clipboard from 'clipboardy';
 
+	/**
+	 * @type {string}
+	 */
 	export let linkToCopy;
 
-	const copyLink = async (text) => {
+	const copyLink = async (/** @type {string} */ text) => {
 		await clipboard.write(text);
 	};
 </script>
