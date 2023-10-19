@@ -65,7 +65,6 @@
 					>
 				</div>
 				<form method="dialog" class="flex gap-3">
-					<!-- if there is a button in form, it will close the modal -->
 					<button class="btn" on:click={() => modalOpen.set(false)}>Close</button>
 					<button class="btn btn-primary" on:click={() => pushLink()}>Get QRcode</button>
 				</form>

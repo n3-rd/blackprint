@@ -5,10 +5,8 @@
 	import ColorModal from './ColorModal.svelte';
 	import GithubIcon from './sub-components/GithubIcon.svelte';
 
-	// NOTE: the element that is using one of the theme attributes must be in the DOM on mount
 	onMount(() => {
 		themeChange(false);
-		// 👆 false parameter is required for svelte
 	});
 </script>
 

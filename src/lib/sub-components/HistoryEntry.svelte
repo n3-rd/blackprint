@@ -1,6 +1,5 @@
 <script>
 	import { setQrCode } from '$lib/main';
-	import { qrcodeName, qrcodeText } from '$lib/stores';
 
 	let history = localStorage.getItem('links');
 	let entries = history ? JSON.parse(history) : [];
