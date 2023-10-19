@@ -13,4 +13,4 @@
 	};
 </script>
 
-<ColorPicker bind:hex on:input={() => change()} />
+<ColorPicker bind:hex on:input={() => change()} label="Background Color" />
