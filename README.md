@@ -8,15 +8,18 @@
 
 ### Linux
 
-Blackprint is available on multiple linux distrubutions, just search `blackprint` on your package manager
+Blackprint is available via debian:
+[blackprint_1.0.0_amd64.deb](https://github.com/n3-rd/blackprint/releases/download/main/blackprint_1.0.0_amd64.deb)
 
 ### Windows
 
-Blackprint is currently not available on Windows, but will be in the near future, you can watch for releases. Blackprint can also be built manually for windows
+Download windows executable below:
+[blackprint_1.0.0_x64-setup.exe](https://github.com/n3-rd/blackprint/releases/download/main/blackprint_1.0.0_x64-setup.exe)
 
 ### MacOS
 
-Blackprint is currently not available on MacOS, but can be built manually.
+Blackprint is currently as a `dmg` file, support for Homebrew will be added soon:
+[blackprint_1.0.0_x64.dmg](https://github.com/n3-rd/blackprint/releases/download/main/blackprint_1.0.0_x64.dmg)
 
 ## Building
 
@@ -42,11 +45,3 @@ npm run tauri build
 ## Contributing
 
 Contributions are always welcome!
-
-## Todo
-
-- Add colour customisation for qrcode
-- Add option to save as image
-- Add support for Windows
-- Add support for MacOS
-- Release V1

@@ -64,6 +64,9 @@ devDependencies:
   tailwindcss:
     specifier: ^3.3.2
     version: 3.3.3
+  tauri-snap-packager:
+    specifier: ^0.1.0
+    version: 0.1.0
   typescript:
     specifier: ^5.0.0
     version: 5.2.2
@@ -2134,6 +2137,13 @@ packages:
       sucrase: 3.34.0
     transitivePeerDependencies:
       - ts-node
+    dev: true
+
+  /tauri-snap-packager@0.1.0:
+    resolution: {integrity: sha512-cVO1MuS9r/IaCzKtVIII4FUoIV7HLMcISOwHv0D3DSDGotWRx8bLOwpWAIwdN08Tj6+tu9AXw1CJylrA7vb3LA==}
+    hasBin: true
+    dependencies:
+      js-yaml: 4.1.0
     dev: true
 
   /text-table@0.2.0:
